@@ -19,7 +19,7 @@ public class Post {
 
     private String mensaje;
 
-    private String usuario; // Se puede guardar el alias o email del usuario autenticado
+    private String usuario;
 
     private LocalDateTime fechaPublicacion;
 

@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 @Tag(name = "Authentication", description = "API for user authentication and JWT management")
-@SecurityRequirement(name = "bearerAuth") // Requiere autenticación para todos los endpoints
+@SecurityRequirement(name = "bearerAuth")
 public class AuthController {
 
     private final UserRepository userRepository;

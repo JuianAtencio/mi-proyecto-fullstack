@@ -19,13 +19,11 @@ public class PostController {
 
     private final PostRepository repository;
 
-    // Obtener todas las publicaciones
     @GetMapping
     public List<Post> getAllPosts() {
         return repository.findAllByOrderByFechaPublicacionDesc();
     }
 
-    // Crear una publicación
     @PostMapping
     public ResponseEntity<Post> createPost(@RequestBody Post post) {
 
@@ -42,7 +40,6 @@ public class PostController {
         return ResponseEntity.ok(repository.save(post));
     }
 
-    // Dar like a una publicación
     @PostMapping("/{id}/like")
     public ResponseEntity<?> likePost(@PathVariable Long id) {
         return repository.findById(id).map(post -> {

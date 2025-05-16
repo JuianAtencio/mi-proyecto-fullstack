@@ -1,9 +1,12 @@
 package com.socialnetwork.authservice.dto;
 import io.swagger.v3.oas.annotations.media.Schema;
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Schema(description = "Datos requeridos para autenticación")
 public class AuthRequest {
     

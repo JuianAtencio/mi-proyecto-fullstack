@@ -81,7 +81,7 @@ const PostListPage = () => {
                 </td>
                 <td style={tdStyle}>{post.totalLikes}</td>
                 <td style={tdStyle}>
-                  <button onClick={() => handleLike(post.id)}>👍 Like</button>
+                  <button onClick={() => handleLike(post.id)}>👍 Like </button>
                 </td>
               </tr>
             ))}
