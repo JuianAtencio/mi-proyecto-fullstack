@@ -1,0 +1,58 @@
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: social_network
+    ports:
+      - "5432:5432"
+    networks:
+      - social-network
+
+  auth-service:
+    build: ./backends/auth-service
+    container_name: auth-service
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/social_network
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+    depends_on:
+      - postgres
+    networks:
+      - social-network
+
+  user-profile-service:
+    build: ./backends/user-profile-service
+    container_name: user-profile-service
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/social_network
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+    depends_on:
+      - postgres
+    networks:
+      - social-network
+
+  post-service:
+    build: ./backends/postservice
+    container_name: post-service
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/social_network
+      - SPRING_DATASOURCE_USERNAME=admin
+      - SPRING_DATASOURCE_PASSWORD=admin
+    depends_on:
+      - postgres
+    networks:
+      - social-network
+
+networks:
+  social-network:
+    driver: bridge

@@ -19,12 +19,12 @@ public class DataInitializer {
     public void init() {
         if (userRepository.count() == 0) {
             userRepository.save(User.builder()
-                    .nombres("Juan")
-                    .apellidos("Pérez")
+                    .nombres("Julian")
+                    .apellidos("Atencio")
                     .fechaNacimiento(LocalDate.of(1990, 5, 20))
-                    .alias("juanp")
-                    .email("juan@example.com")
-                    .password(new BCryptPasswordEncoder().encode("admin"))
+                    .alias("juliancho")
+                    .email("julian@gmail.com")
+                    .password(new BCryptPasswordEncoder().encode("12345"))
                     .build());
         }
     }

@@ -1,0 +1,76 @@
+/* Centra todo en pantalla */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Tarjeta blanca */
+.login-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Título */
+.login-title {
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  color: #333;
+}
+
+/* Formulario */
+.login-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.login-form input:focus {
+  border-color: #0366d6;
+  outline: none;
+}
+
+/* Botón */
+.login-btn {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #0366d6;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.login-btn:hover {
+  background-color: #024eac;
+}
+
+/* Error */
+.login-error {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}

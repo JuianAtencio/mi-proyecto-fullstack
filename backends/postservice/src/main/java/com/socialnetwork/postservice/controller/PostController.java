@@ -34,7 +34,7 @@ public class PostController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
          }
         
-        String nombreUsuario = authentication.getName(); // esto te da el email o username
+        String nombreUsuario = authentication.getName();
         post.setUsuario(nombreUsuario);
         post.setFechaPublicacion(LocalDateTime.now());
         post.setTotalLikes(0);

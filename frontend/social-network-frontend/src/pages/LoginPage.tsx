@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "./LoginPage.css";
 
 const LoginPage = () => {
   const { setToken } = useAuth();
@@ -28,24 +29,36 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Correo"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        /><br />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        /><br />
-        <button type="submit">Ingresar</button>
-      </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+    <div className="login-page">
+      <div className="login-card">
+        <h2 className="login-title">Iniciar Sesión</h2>
+        <form onSubmit={handleLogin} className="login-form">
+          <label>
+            Correo
+            <input
+              type="email"
+              placeholder="tú@correo.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Contraseña
+            <input
+              type="password"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <button type="submit" className="login-btn">
+            Ingresar
+          </button>
+          {error && <p className="login-error">{error}</p>}
+        </form>
+      </div>
     </div>
   );
 };
