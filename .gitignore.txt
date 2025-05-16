@@ -1,0 +1,34 @@
+# General
+.DS_Store
+*.log
+.idea/
+.vscode/
+*.iml
+*.swp
+*.class
+
+# Backend (Spring Boot)
+backends/*/target/
+backends/*/.gradle/
+backends/*/.settings/
+backends/*/.project
+backends/*/.classpath
+backends/*/bin/
+backends/*/build/
+backends/*/out/
+backends/*/*.jar
+backends/*/*.war
+
+# Frontend (React)
+frontend/react-app/node_modules/
+frontend/react-app/.env
+frontend/react-app/.env.local
+frontend/react-app/.env.development.local
+frontend/react-app/.env.test.local
+frontend/react-app/.env.production.local
+frontend/react-app/npm-debug.log*
+frontend/react-app/yarn-debug.log*
+frontend/react-app/yarn-error.log*
+frontend/react-app/.next/
+frontend/react-app/out/
+frontend/react-app/dist/
